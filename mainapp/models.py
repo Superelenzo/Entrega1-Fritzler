@@ -8,4 +8,4 @@ class Blog(models.Model):
     texto = models.TextField()
     
     def __str__(self):
-        return f'{self.post} {self.autor} {self.texto}'
+        return f'- Post: {self.post} - Autor: {self.autor} - Texto: {self.texto}'
