@@ -1,0 +1,21 @@
+{% extends "compartidos/base.html" %}
+
+{% block head %}<title>Entradas</title>{% endblock head %}
+{% block h1_header %}Entradas{% endblock h1_header %}
+{% block sub_header %}{% endblock sub_header %}
+
+{% block main %}
+
+<form action="" >
+    <table>
+        {{formulario}}
+    </table>
+    <input type="submit" value="Buscar" >
+</form>
+
+<ul>
+    {% for post in post_encontrados %}
+    <li>Entrada: {{post}}</li>
+    {% endfor %}
+</ul>
+{% endblock main %} 

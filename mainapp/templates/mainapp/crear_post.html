@@ -1,0 +1,21 @@
+{% extends "compartidos/base.html" %}
+
+{% block head %}<title>Nuevo post</title>{% endblock head %}
+{% block h1_header %}Nuevo post{% endblock h1_header %}
+{% block sub_header %}Formulario de creacion de nuevo posteo{% endblock sub_header %}
+
+{% block main %}
+
+<form action="" method="post">
+
+    {% csrf_token %}
+
+    <table>
+    {{formulario}}
+    </table>
+
+    <input type="submit" value="Crear" >
+
+</form>
+
+{% endblock main %} 
