@@ -1,0 +1,27 @@
+{% extends "compartidos/base.html" %}
+ {% block head %}
+ <title>Productos</title>
+ {% endblock head %} 
+ {% block h1_header %} Productos {% endblock h1_header %}
+{% block main %}
+
+<a class="navbar-brand" href={% url "crear_movil" %}>Crear movil</a>
+<form action="">
+    <input type="text" name='marca' placeholder='Ingrese marca...'>
+    <input type="submit" value="Buscar" />
+</form>
+
+{% if listado_movil %}
+<ul>
+    {% for movil in listado_movil %}
+    <li>
+        <a href={% url "detalle_movil" movil.id %}>{{movil}}</a> || <a href={% url "editar_movil" movil.id %}>Editar</a> || <a href={% url "eliminar_movil" movil.id %}>Eliminar</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No existen moviles cargados</p>
+{% endif %}
+
+{% endblock main %}
+    
