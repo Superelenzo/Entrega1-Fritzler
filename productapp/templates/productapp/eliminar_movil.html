@@ -1,6 +1,9 @@
-{% extends "compartidos/base.html" %} {% block head %}<title>Eliminar movil</title
-    >{% endblock head %} {% block h1_header %} Eliminar movil {% endblock h1_header %}
-    {% block main %}
+{% extends "compartidos/base.html" %}
+{% block head %}<title>Eliminar movil</title>{% endblock head %}
+{% block h1_header %} Eliminar movil {% endblock h1_header %}
+{% block sub_header %} Base de datos de equipos de usuarios y nuevos {% endblock sub_header %}
+
+{% block main %}
     
     <form action={% url "eliminar_movil" movil.id %} method="post">
         {% csrf_token %}
@@ -8,5 +11,5 @@
         <input type="submit" value="Confirmar" />
     </form>
     
-    {% endblock main %}
+{% endblock main %}
     

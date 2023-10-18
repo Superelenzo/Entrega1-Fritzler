@@ -1,11 +1,20 @@
 {% extends "compartidos/base.html" %}
-
+{% load static %}
 {% block head %}<title>Entradas</title>{% endblock head %}
-{% block h1_header %}Entradas{% endblock h1_header %}
-{% block sub_header %}{% endblock sub_header %}
+
+
+{% block h1_header %}
+Entradas del blog
+{% endblock h1_header %}
+
+{% block sub_header %}
+Transitando la movilidad sustentable
+{% endblock sub_header %}
+
 
 {% block main %}
 
+<a class="navbar-brand" href={% url "crear_post" %}>Nuevo post</a>
 <form action="" >
     <table>
         {{formulario}}
@@ -13,9 +22,19 @@
     <input type="submit" value="Buscar" >
 </form>
 
+{% if post_encontrados %}
 <ul>
     {% for post in post_encontrados %}
-    <li>Entrada: {{post}}</li>
+    <li>
+        <a href={% url "detalles_post" post.id %}>{{post}}</a>
+        || <a href={% url "editar_post" post.id %}>Editar</a>
+        || <a href={% url "eliminar_post" post.id %}>Eliminar</a>
+    </li>
     {% endfor %}
 </ul>
+{% else %}
+<p>No hay posteos aun...</p>
+
+{% endif %}
+
 {% endblock main %} 

@@ -11,11 +11,16 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+class MovilBaseView(ListView):
+    model = Movil
+    template_name = "productapp/productos.html"
+    success_url = reverse_lazy('productos')
+
 
 class MovilCreateView(CreateView):
     model = Movil
     template_name = "productapp/crear_movil.html"
-    fields = ['marca', 'modelo', 'descripcion', 'fecha_lanzamiento']
+    fields = ['marca', 'modelo', 'descripcion', 'fecha_lanzamiento', 'imagen']
     success_url = reverse_lazy('productos')
 
 
@@ -38,13 +43,13 @@ class MovilListView(ListView):
     def get_queryset(self):
         marca = self.request.GET.get('marca', '')
         if marca:
-            paletas = self.model.objects.filter(marca__icontains=marca)
+            moviles = self.model.objects.filter(marca__icontains=marca)
         else:
-            paletas = self.model.objects.all()
-        return paletas
+            moviles = self.model.objects.all()
+        return moviles
 
 class MovilUpdateView(LoginRequiredMixin, UpdateView):
     model = Movil
     template_name = "productapp/editar_movil.html"
-    fields = ['marca', 'modelo', 'descripcion', 'fecha_lanzamiento']
+    fields = ['marca', 'modelo', 'descripcion', 'fecha_lanzamiento', 'imagen']
     success_url = reverse_lazy('productos')

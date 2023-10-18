@@ -1,0 +1,17 @@
+{% extends "compartidos/base.html" %} 
+
+{% block head %}<title>Detalles post</title>{% endblock head %} 
+
+{% block h1_header %}
+Detalles del post con id {{post.id}}
+{% endblock h1_header %}
+
+{% block main %}
+
+<ul>
+    <li>Post: {{post.post}}</li>
+    <li>Autor: {{post.autor}}</li>
+    <li>Texto: {{post.texto}}</li>
+</ul>
+
+{% endblock main %}

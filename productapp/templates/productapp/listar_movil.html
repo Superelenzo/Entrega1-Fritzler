@@ -3,25 +3,40 @@
  <title>Productos</title>
  {% endblock head %} 
  {% block h1_header %} Productos {% endblock h1_header %}
+ {% block sub_header %} Base de datos de equipos de usuarios {% endblock sub_header %}
 {% block main %}
+<div class="row gx-4 gx-lg-5 justify-content-center">       
+    <div class="col-md-8 col-lg-8 col-xl-7">
+        <section class="bg-light">
+        <div class="container px-4 px-lg-8">
+        <form action="">
+        <h3>Busqueda por marca</h3>
+        <input type="text" name='marca' placeholder='Ingrese marca...'>
+        <input type="submit" value="Buscar" />
+        </form>
+        <br>
+    <h4>Base de datos de productos disponibles</h4>
+    {% if listado_movil %}
+        <ul>
+            {% for movil in listado_movil %}
+             <li>
+                <div class="p-4 p-lg-4 lead fst-italic">
+                    <a href={% url "detalle_movil" movil.id %}>{{movil}}</a> || <a href={% url "editar_movil" movil.id %}>Editar</a> || <a href={% url "eliminar_movil" movil.id %}>Eliminar</a>
+                </div>
+                </li>
+            {% endfor %}
+        </ul>
+  
+    {% else %}
+        <div class="p-3 p-lg-4 lead fst-italic">
+             <p>No existen moviles cargados</p>
+        </div>
+    </div>
+    </div>
 
-<a class="navbar-brand" href={% url "crear_movil" %}>Crear movil</a>
-<form action="">
-    <input type="text" name='marca' placeholder='Ingrese marca...'>
-    <input type="submit" value="Buscar" />
-</form>
-
-{% if listado_movil %}
-<ul>
-    {% for movil in listado_movil %}
-    <li>
-        <a href={% url "detalle_movil" movil.id %}>{{movil}}</a> || <a href={% url "editar_movil" movil.id %}>Editar</a> || <a href={% url "eliminar_movil" movil.id %}>Eliminar</a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>No existen moviles cargados</p>
-{% endif %}
-
+    {% endif %}
+        </section>  
+</div>
+         
 {% endblock main %}
     

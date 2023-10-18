@@ -1,0 +1,17 @@
+{% extends "compartidos/base.html" %}
+ {% block head %}
+ <title>Productos</title>
+ {% endblock head %} 
+ {% block h1_header %} Menu de equipos {% endblock h1_header %}
+ {% block sub_header %} Base de datos de equipos de usuarios {% endblock sub_header %}
+
+
+ {% block main %}
+ 
+    <div class="d-grid gap-2">
+        <a class="btn btn-success btn-lg" href={% url "crear_movil" %}>Cargar movil</a>
+        <br>
+        <a class="btn btn-primary btn-lg" href={% url "listar_movil" %}>Lista de moviles</a>
+    </div>   
+
+ {% endblock main %}
