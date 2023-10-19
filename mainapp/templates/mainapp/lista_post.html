@@ -13,28 +13,35 @@ Transitando la movilidad sustentable
 
 
 {% block main %}
-
-<a class="navbar-brand" href={% url "crear_post" %}>Nuevo post</a>
-<form action="" >
-    <table>
-        {{formulario}}
-    </table>
-    <input type="submit" value="Buscar" >
-</form>
-
-{% if post_encontrados %}
-<ul>
-    {% for post in post_encontrados %}
-    <li>
-        <a href={% url "detalles_post" post.id %}>{{post}}</a>
-        || <a href={% url "editar_post" post.id %}>Editar</a>
-        || <a href={% url "eliminar_post" post.id %}>Eliminar</a>
-    </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>No hay posteos aun...</p>
-
-{% endif %}
+<section class="bg-light">
+    <div class="container">
+            <table class="table table-borderless col-md-5 fst-italic">
+                <form action="" >
+                    <p class="lead">
+                        <h3>Formulario de busqueda de publicaciones</h3>
+                        <table>
+                        {{formulario}}
+                    </table>
+                    <input type="submit" value="Buscar">
+                    </p>
+                </form>
+                {% if post_encontrados %}
+                <ul>
+                    {% for post in post_encontrados %}
+                        <li>
+                            <a href={% url "detalles_post" post.id %}>{{post}}</a>
+                            || <a href={% url "editar_post" post.id %}>Editar</a>
+                             || <a href={% url "eliminar_post" post.id %}>Eliminar</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                    <div class="p-3 p-lg-4 lead fst-italic">
+                        <p>No hay publicaciones creadas en este momento.</p>
+                    </div>
+                {% endif %}
+            </table>
+    <div>
+</section>
 
 {% endblock main %} 

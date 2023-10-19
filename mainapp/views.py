@@ -14,6 +14,9 @@ def inicio(request):
     }    
     return render(request, r'mainapp/inicio.html', datos)
 
+def blog_base(request):
+    return render(request, 'mainapp/posteos.html')
+                  
 def about(request):
     return render(request, 'mainapp/about.html')
 
