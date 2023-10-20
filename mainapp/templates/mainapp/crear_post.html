@@ -1,21 +1,17 @@
 {% extends "compartidos/base.html" %}
-{% load static %}
-{% block head %}<title>Nuevo post</title>{% endblock head %}
 
+{% block head %}<title>Nuevo post</title>{% endblock head %}
 
 {% block h1_header %}Nuevo post{% endblock h1_header %}
             
 {% block sub_header %}Formulario de creacion de nuevo posteo{% endblock sub_header %}
 
 {% block main %}
-
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
         <table>
-        {{form.media}}
         {{formulario}}
         </table>
         <input type="submit" value="Crear" >
 </form>
-
 {% endblock main %} 

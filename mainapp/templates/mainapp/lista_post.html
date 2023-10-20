@@ -1,21 +1,15 @@
 {% extends "compartidos/base.html" %}
-{% load static %}
+
 {% block head %}<title>Entradas</title>{% endblock head %}
 
+{% block h1_header %}Entradas del blog{% endblock h1_header %}
 
-{% block h1_header %}
-Entradas del blog
-{% endblock h1_header %}
-
-{% block sub_header %}
-Transitando la movilidad sustentable
-{% endblock sub_header %}
-
+{% block sub_header %}Transitando la movilidad sustentable{% endblock sub_header %}
 
 {% block main %}
 <section class="bg-light">
     <div class="container">
-            <table class="table table-borderless col-md-5 fst-italic">
+            <table class="table table-borderless col-md-5 fw-bold">
                 <form action="" enctype="multipart/form-data">
                     <p class="lead">
                         <h3>Formulario de busqueda de publicaciones</h3>
@@ -36,12 +30,11 @@ Transitando la movilidad sustentable
                     {% endfor %}
                 </ul>
                 {% else %}
-                    <div class="p-3 p-lg-4 lead fst-italic">
+                    <div class="p-3 p-lg-4 lead fw-bold">
                         <p>No hay publicaciones creadas en este momento.</p>
                     </div>
                 {% endif %}
             </table>
     <div>
 </section>
-
 {% endblock main %} 
