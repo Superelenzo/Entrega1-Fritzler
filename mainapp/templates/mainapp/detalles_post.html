@@ -3,27 +3,28 @@
 {% block head %}<title>Detalles post</title>{% endblock head %} 
 
 {% block header %}
-<header class="masthead" style="background-image: url('static/assets/img/blog.jpg')"> 
+<form action="" enctype="multipart/form-data">
+<header class="masthead" style="background-image: url('{{post.fondo}}')"> 
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="post-heading">
                     <h1>{{post.post}}</h1>
                     <h2 class="subheading">by: {{post.autor}}</h2>
-                    {% block sub_header %}{% endblock sub_header %}
                 </div>
             </div>
         </div>
     </div>
 </header>
+</form>
 {% endblock header %}
 
 {% block main %}
-<article class="mb-4">
+<article class="mb-4" >
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                {{ post.texto | safe }}
+                {{post.texto}}
             </div>
         </div>
     </div>

@@ -1,19 +1,26 @@
 {% extends "compartidos/base.html" %}
-{% block head %}
-<title>Editar perfil</title>
-{% endblock head %}
+
+{% block head %}<title>Editar perfil</title>{% endblock head %}
+
 {% block h1_header %} Editar perfil {% endblock h1_header %}
+
 {% block sub_header %}Transitando la movilidad sustentable{% endblock sub_header %}
+
 {% block main %}
-
-<form action={% url "editar_perfil" %} method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        {{formulario}}
-    </table>
-    <input type="submit" value="Editar" />
-    <a href={% url "editar_pass" %}>Cambiar contraseña</a>
-</form>
-
+<section class="bg-light">
+    <div class="container">
+        <form class="p-3 p-lg-4" action={% url 'editar_perfil' %} method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table class="table table-borderless col-md-5 fcw-bold">
+                {{formulario}}
+            </table>
+            <div py-3 py-lg-4>
+                <button class="btn btn-outline-success fcw-bold"><i class="bi bi-save2"></i> Guardar</button>
+                <a class="btn btn-outline-danger fcw-bold" href={% url 'ver_perfil' %} role="button"><i class="bi bi-x-circle"></i> Cancelar</a>
+                <a class="btn btn-outline-warning fst-italic" href={% url 'editar_pass' %} role="button"><i class="bi bi-x-circle"></i> Cambiar contraseña</a>
+            </div>
+        </form>
+    </div>
+</section>
 {% endblock main %}
     

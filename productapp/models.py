@@ -1,8 +1,7 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
-from django.db import models
-from ckeditor.fields import RichTextField
 
 class Movil(models.Model):
     marca = models.CharField(max_length=50)

@@ -1,18 +1,24 @@
 {% extends "compartidos/base.html" %}
-{% block head %}
-<title>Registrarse</title>
-{% endblock head %}
-{% block h1_header %} Registrarse {% endblock h1_header %}
+{% load static %}
+
+{% block head %}<title>Registrarse</title>{% endblock head %}
+
+{% block h1_header %}Registro de nuevo usuario {% endblock h1_header %}
+
 {% block sub_header %}Transitando la movilidad sustentable{% endblock sub_header %}
+
 {% block main %}
-
-<form action={% url "registro" %} method="post">
-    {% csrf_token %}
-    <table>
-        {{formulario}}
-    </table>
-    <input type="submit" value="Registrarse" />
-</form>
-
+<section class="bg-light">
+    <div class="container">
+        <form class="p-3 p-lg-4" action={% url 'registro' %} method="POST">
+            {% csrf_token %}
+            <table class="col-md-5 fst-normal">
+                {{formulario}}
+            </table>
+            <div class="py-3 py-lg-4">
+                <button class="btn btn-outline-primary fst-normal">Registrarme</button>
+            </div>
+        </form>
+    </div>
+</section>
 {% endblock main %}
-    

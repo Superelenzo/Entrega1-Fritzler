@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 from datetime import datetime
-from django.template import Template, Context, loader
 from mainapp.models import Blog
-from django.http import HttpResponse
 from mainapp.forms import CrearPostFormulario,PostBusquedaFormulario, EditarPostFormulario
 from django.contrib.auth.decorators import login_required
 
@@ -21,7 +19,6 @@ def about(request):
     return render(request, 'mainapp/about.html')
 
 def crear_post(request):
-    
     if request.method == 'POST':
         formulario = CrearPostFormulario(request.POST)
         if formulario.is_valid():
@@ -66,8 +63,6 @@ def editar_post(request, post_id):
             
     formulario = EditarPostFormulario(initial={'post': post_a_editar.post, 'autor': post_a_editar.autor, 'texto':post_a_editar.texto})
     return render(request, r'mainapp/editar_post.html', {'formulario': formulario})
-
-
 
 @login_required
 def eliminar_post(request, post_id):

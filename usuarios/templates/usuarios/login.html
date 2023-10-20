@@ -1,18 +1,24 @@
 {% extends "compartidos/base.html" %}
-{% block head %}
-<title>Iniciar sesion</title>
-{% endblock head %}
+
+{% block head %}<title>Iniciar sesion</title>{% endblock head %}
+
 {% block h1_header %} Pagina de Login {% endblock h1_header %}
+
 {% block sub_header %}Transitando la movilidad sustentable{% endblock sub_header %}
+
 {% block main %}
-
-<form action={% url "login" %} method="post">
-    {% csrf_token %}
-    <table>
-        {{formulario}}
-    </table>
-    <input type="submit" value="Iniciar sesion" />
-</form>
-
+<section class="bg-light">
+    <div class="container">
+        <form class="p-3 p-lg-4" action={% url 'login' %} method="POST">
+            {% csrf_token %}
+            <table class="col-md-5 fst-normal">
+                {{formulario}}
+            </table>
+            <div class="py-3 py-lg-4">
+                <button class="btn btn-outline-primary fst-normal">Ingresar</button>
+            </div>
+        </form>
+    </div>
+</section>
 {% endblock main %}
     

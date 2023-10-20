@@ -1,10 +1,13 @@
-{% extends "compartidos/base.html" %} 
-{% block head %}<title>Edicion del movil</title>{% endblock head %} 
+{% extends "compartidos/base.html" %}
+{% load static %}
+
+{% block head %}<title>Edicion del movil</title>{% endblock head %}
+
 {% block h1_header %} Edicion del movil {% endblock h1_header %}
+
 {% block sub_header %} Base de datos de equipos de usuarios y nuevos {% endblock sub_header %}
 
 {% block main %}
-    
     <form action={% url "editar_movil" movil.id %} method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <table>
@@ -13,6 +16,5 @@
         </table>
         <input type="submit" value="Editar" />
     </form>
-    
 {% endblock main %}
     

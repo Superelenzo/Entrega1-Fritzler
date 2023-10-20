@@ -10,7 +10,7 @@
         <title>Movilidad Electrica</title>
         {% endblock head %}
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href={% static "assets/favicon.ico" %}>
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -27,11 +27,12 @@
                 <a class="navbar-brand" href={% url "posteos" %}>Blog</a>                
                 <a class="navbar-brand" href={% url "productos" %}>Productos</a>
                 <a class="navbar-brand" href="/about">Sobre mi</a>
+                
                 {% if request.user.is_authenticated %}
                 {% if request.user.infoextra.avatar %}
-                    <img src={{request.user.infoextra.avatar.url}} alt="" height="40px">
+                    <img src={{request.user.infoextra.avatar.url}} alt="" height="50px">
                 {% endif %}
-                <a class="navbar-brand" href={% url "editar_perfil" %}>{{request.user.username}}</a>
+                <a class="navbar-brand" href={% url "ver_perfil" %}>{{request.user.username}}</a>
                 <a class="btn btn-dark" href={% url "logout" %}>Cerrar sesion</a>
                 {% else %}
                 <a class="btn btn-success" href={% url "login" %}>Iniciar sesion</a>
@@ -45,7 +46,7 @@
         </nav>
         <!-- Page Header-->
         {% block header %}
-        <header class="masthead" style="background-image: url('static/assets/img/home.jpg')"> 
+        <header class="masthead" style="background-image: url('{% static 'assets/img/home.jpg' %}')"> 
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">

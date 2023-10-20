@@ -3,7 +3,8 @@ from django import forms
 from django.contrib.auth.models import User
 
 
-class NuestroFormularioDeRegistro(UserCreationForm):
+class FormularioRegistro(UserCreationForm):
+    username = forms.CharField(label='Nombre de usuario')
     email = forms.EmailField()
     password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repetir Contraseña', widget=forms.PasswordInput)
@@ -14,14 +15,15 @@ class NuestroFormularioDeRegistro(UserCreationForm):
         help_texts = {campo: '' for campo in fields}
     
         
-class NuestroFormularioDeEditarPerfil(UserChangeForm):
+class FormularioEditarPerfil(UserChangeForm):
     password = None
     email = forms.EmailField(label='Cambiar email')
     first_name = forms.CharField(label='Nombre', max_length=30)
     last_name = forms.CharField(label='Apellido', max_length=50)
     link = forms.URLField(required=False)
     avatar = forms.ImageField(required=False)
+    descripcion = forms.CharField(max_length=255, required=False, widget=forms.Textarea(attrs={ 'class' : 'form-control' }))
     
     class Meta:
         model = User
-        fields = ['email', 'first_name', 'last_name', 'link', 'avatar']
+        fields = ['email', 'first_name', 'last_name', 'link', 'avatar', 'descripcion']
