@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'mainapp',
     'productapp',
     'ckeditor',
-    'usuarios'
+    'usuarios',
+    'mensajeria'
 ]
 
 MIDDLEWARE = [
