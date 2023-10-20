@@ -66,6 +66,6 @@ def editar_perfil(request):
     return render(request, 'usuarios/editar_perfil.html', {'formulario': formulario})
 
 
-class CambiarContraseña(LoginRequiredMixin, PasswordChangeView):
+class CambiarContrasenia(LoginRequiredMixin, PasswordChangeView):
     template_name = 'usuarios/editar_pass.html'
     success_url = reverse_lazy('ver_perfil')
