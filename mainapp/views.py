@@ -18,6 +18,12 @@ def blog_base(request):
 def about(request):
     return render(request, 'mainapp/about.html')
 
+def libro(request):
+    return render(request, 'mainapp/libro.html')
+
+def shop(request):
+    return render(request, 'mainapp/shop.html')
+
 def crear_post(request):
     if request.method == 'POST':
         formulario = CrearPostFormulario(request.POST)
@@ -75,4 +81,4 @@ def eliminar_post(request, post_id):
 def detalles_post(request, post_id):
     post = Blog.objects.get(id=post_id)
     return render(request, 'mainapp/detalles_post.html', {'post': post})
-    
+

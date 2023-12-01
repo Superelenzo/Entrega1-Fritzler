@@ -1,11 +1,15 @@
-{% extends 'compartidos/base.html' %}
+{% extends "compartidos/base.html" %}
+
 {% load static %}
 
-{% block head %}<title>Sobre mí </title>{% endblock head %}
+{% block head %}<title>Nosotros </title>{% endblock head %}
 
-{% block h1_header %}Sobre mi{% endblock h1_header %}
-
-{% block sub_header %}Un breve comentario del autor{% endblock sub_header %}
+{% block h1_header %}
+    <span class="site-heading-upper text-succes mb-3">Quienes somos</span>
+{% endblock h1_header %}
+{% block sub_header %}
+    <span class="site-heading-lower">Una breve descripcion de nuestra mision</span>
+{% endblock sub_header %}
 
 {% block main %}
     <section class="testimonials text-center bg-light">

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Clean Blog - Start Bootstrap Theme</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href={% static "css/styles.css" %} rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href={% url 'inicio' %}>Home</a>
+                <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>-->
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{% static 'assets/img/home.jpg' %}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Hacia la Movilidad Eléctrica</h1>
+                            <h2 class="subheading">Movilidad sustentable en Argentina</h2>
+                            <span class="meta">
+                                Posteado por
+                                <a href="https://www.argentina.gob.ar">Argentina.gob.ar</a>
+                                on August 24, 2023
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        
+                        <h2 class="section-heading">Litio</h2>
+                        <p>Argentina es el cuarto productor mundial, luego de Australia, Chile y China. El triángulo del litio (Argentina, Bolivia y Chile) cuenta con cerca del 65% de los recursos mundiales y alcanza el 29,5% de la producción mundial total para 2020.</p>
+
+                        <p> El programa busca mejorar la conectividad, frecuencia, regularidad, seguridad y confort mediante el reemplazo de servicios de transporte diésel por eléctricos, propiciar la multimodalidad sostenible y abandonar los modos de transporte carbono-intensivos.</p>
+                            
+                        <p> El transporte automotor de cargas de última milla es una de las principales fuentes de emisiones al interior de las ciudades y seguirá creciendo de la mano del comercio electrónico. Además de los beneficios ambientales, la transformación del sector traerá un incremento en la cantidad y nivel de capacitación de empleos requerida (“empleos verdes”).</p>
+                            
+                        <p> La promoción de la electromovilidad implica además:</p> 
+                            <ul>
+                                <li>Beneficios en la balanza comercial, si Argentina logra posicionarse como proveedor de vehículos eléctricos para la región y el mundo.</li>
+                                <li> Reducción del gasto sanitario por internaciones asociadas a enfermedades respiratorias.</li>
+                                <li> Mejora de la calidad de vida por reducción de la contaminación acústica en áreas urbanas.</li>
+                            </ul>
+                        
+                        <h2 class="section-heading">Objetivos</h2>
+                        <ul>
+                        <li>Contribuir a la descarbonización diversificando la matriz energética mediante el uso de energía eléctrica.</li>
+                        <li>Potenciar estrategias de eficiencia energética para reducir el uso de combustibles fósiles y energía en las diversas actividades de movilidad, transporte y logística.</li>
+                        <li>Fortalecer las capacidades laborales nacionales relacionadas con la movilidad eléctrica.</li>
+                        <li>Consolidar el marco institucional y financiero destinado a propiciar el acceso de usuarios a nuevos vehículos eléctricos.</li>
+                        <li>Impulsar la cadena de suministros nacionales de movilidad eléctrica junto a la Secretaría de Industria y Desarrollo Productivo del Ministerio de Economía.</li> 
+                        <li>Fomentar una infraestructura de recarga adecuada, con sus marcos y normas reglamentarias.</li>
+                        <li>Impulsar con los sectores involucrados la definición de porcentajes anuales de fabricación de flota que colaboren al cumplimiento de los objetivos del Plan junto a la Secretaría de Industria y Desarrollo Productivo del Ministerio de Economía.</li> 
+                        <li>Fomentar condiciones de acceso a financiamiento para inversiones en el sector.</li> 
+                        <li>Construir un esquema de Monitoreo, Reporte y Verificación (MRV) con indicadores de interés.</li>    
+                        </ul>    
+                        <h2 class="section-heading">Alcance y localización territorial</h2>    
+                        <p>Se prevé la implementación del Programa en todo el país, alcanzando a todos los niveles de gobierno, organismos centralizados, descentralizados y empresas y sociedades del Estado que abarca a las empresas del Estado, las sociedades del Estado, las sociedades anónimas con participación estatal mayoritaria, las sociedades de economía mixta y todas aquellas otras organizaciones empresariales donde el Estado nacional tenga participación mayoritaria en el capital o en la formación de las decisiones.</p>
+                        
+                        <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+                        
+                        
+                        <a href="#!"><img class="img-fluid" src="assets/img/post-sample-image.jpg" alt="..." /></a>
+                        <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+                        <p>
+                        <p>
+                            Texto extraido de: 
+                            <a href="https://www.argentina.gob.ar/transporte/transporte-sostenible/programas/hacia-la-movilidad-electrica">Argentina.gob.ar</a>
+                            &middot; Imagenes por: (coming soon)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src={% static "js/javascript.js" %}></script>
+    </body>
+</html>
